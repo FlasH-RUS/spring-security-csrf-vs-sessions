@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+</head>
+<div layout:fragment="body">
+	<p>Hello, CSRF-curious developer!</p>
+	<form id="logout-form" th:action="@{/logout}" method="post">
+	    <input id="logout-button" type="submit" value="Logout" />
+	</form>
+</div>
+</html>
