@@ -1,0 +1,30 @@
+# IDEA IDE
+*.ipr
+*.iml
+*.iws
+*.ids
+.idea/
+out/
+
+# Eclipse IDE
+.metadata/
+.settings/
+.classpath
+.project
+.settings
+.pmd
+.checkstyle
+.springBeans
+bin/
+Servers/
+RemoteSystemsTempFiles/
+
+# Gradle
+gradle-app.setting
+.gradle/
+build/
+!/**/src/**/build/
+target/
+
+# Others
+.DS_Store
