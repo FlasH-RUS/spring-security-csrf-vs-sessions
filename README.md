@@ -13,5 +13,5 @@ The idea is to have several branches with different configurations (stateless se
 - Spring Boot 1.5.8
 - Default security with in-memory authentication and cookie-based CSRF enabled (_CookieCsrfTokenRepository_)
 - Index page (/) that requires authentication
-- (Functional tests)[src/test/java/ru/lonedeveloper/flash/demo/csrfsessions/FunctionalTest.java] to check the application behavior
-- (CSRF tests)[src/test/java/ru/lonedeveloper/flash/demo/csrfsessions/FunctionalTest.java] to check CSRF-related behavior
+- Functional tests (see ru.lonedeveloper.flash.demo.csrfsessions.FunctionalTest) to check the application behavior
+- CSRF tests see (see ru.lonedeveloper.flash.demo.csrfsessions.CsrfTest) to check CSRF-related behavior
