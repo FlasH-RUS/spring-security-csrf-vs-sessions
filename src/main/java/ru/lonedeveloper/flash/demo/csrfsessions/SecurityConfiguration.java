@@ -24,6 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
         super.configure(http);
         http.csrf().csrfTokenRepository(new CookieCsrfTokenRepository());
+        http.sessionManagement().disable();
     }
 
     @Override
