@@ -25,13 +25,19 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.context.HttpRequestResponseHolder;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.security.web.context.SaveContextOnUpdateOrErrorResponseWrapper;
 import org.springframework.security.web.context.SecurityContextRepository;
 import org.springframework.util.ClassUtils;
 import org.springframework.web.util.CookieGenerator;
 import org.springframework.web.util.WebUtils;
 
-//TODO: JD about copypastes from HttpSessionSecurityContextRepository
+/**
+ * A very basic cookie-based security context repository that serializes {@code SecurityContext} into the cookie using Java
+ * serialization and Base64 encoding.<br>
+ * <b>Note:</b> unfortunately the simplest implementation doesn't work, so the internals were borrowed from Spring's default
+ * {@link HttpSessionSecurityContextRepository} which contains a lot at security fixes (according to comments).
+ */
 public class CookieSecurityContextRepository implements SecurityContextRepository {
 
     private final String cookieName;
@@ -148,7 +154,7 @@ public class CookieSecurityContextRepository implements SecurityContextRepositor
                 final HttpServletResponse response,
                 final HttpServletRequest request,
                 final SecurityContext context) {
-            super(response, true); // TODO: try with false?
+            super(response, true);
             this.request = request;
             this.contextBeforeExecution = context;
             this.authBeforeExecution = context.getAuthentication();
