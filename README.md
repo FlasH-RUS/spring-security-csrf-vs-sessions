@@ -15,3 +15,9 @@ The idea is to have several branches with different configurations (stateless se
 - Index page (/) that requires authentication
 - Functional tests (see ru.lonedeveloper.flash.demo.csrfsessions.FunctionalTest) to check the application behavior
 - CSRF tests see (see ru.lonedeveloper.flash.demo.csrfsessions.CsrfTest) to check CSRF-related behavior
+
+### This branch specifics vs master
+- Stateless session management turned on (`http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)`)
+
+## Results
+- :boom: Both functional and CSRF tests fail
