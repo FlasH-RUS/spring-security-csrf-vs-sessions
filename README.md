@@ -15,3 +15,11 @@ The idea is to have several branches with different configurations (stateless se
 - Index page (/) that requires authentication
 - Functional tests (see ru.lonedeveloper.flash.demo.csrfsessions.FunctionalTest) to check the application behavior
 - CSRF tests see (see ru.lonedeveloper.flash.demo.csrfsessions.CsrfTest) to check CSRF-related behavior
+
+### This branch specifics vs master
+- Session management disabled (`http.sessionManagement().disable()`)
+- `CsrfAuthenticationStrategy` explicitly added as a `SessionAuthenticationStrategy` 
+
+## Results
+- :white_check_mark: All tests pass
+- :boom: Manual tests discovered that HttpSession is still created after logging in (JSESSIONID cookie is there)
