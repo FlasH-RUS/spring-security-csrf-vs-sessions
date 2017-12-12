@@ -16,6 +16,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public static final String USER = "user";
     public static final String PASSWORD = "password";
 
+    private static final String SECURITY_CONTEXT_COOKIE_NAME = "SECURITY";
+
     @Override
     public void configure(final WebSecurity web) throws Exception {
         web.debug(true);
@@ -26,6 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         super.configure(http);
         http.csrf().csrfTokenRepository(new CookieCsrfTokenRepository());
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.securityContext().securityContextRepository(new CookieSecurityContextRepository(SECURITY_CONTEXT_COOKIE_NAME));
     }
 
     @Override

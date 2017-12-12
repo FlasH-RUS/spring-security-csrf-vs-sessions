@@ -18,6 +18,8 @@ The idea is to have several branches with different configurations (stateless se
 
 ### This branch specifics vs master
 - Stateless session management turned on (`http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)`)
+- A custom `CookieSecurityContextRepository` implemented
 
 ## Results
-- :boom: Both functional and CSRF tests fail
+- :white_check_mark: All tests pass
+- :boom: During manual testing /login redirects you to / which in turn redirects you to /login
